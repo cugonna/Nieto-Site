@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- jQuery UI styles -->
+<link rel="stylesheet" type="text/css" media="screen" href="./css/base.css">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<h1 id="section" style="text-align:center"></h1>
+
+<form ref="dataList" id="dataForm" action="http://localhost:8080/files" method="GET" onsubmit=" return empty();">
+  <div class="dateselect">
+    <div id="classinfo">
+      <input type="text" name="subject" id="subject"></input>
+      <input type="text" name="period" id="period"></input>
+    </div>
+    Select Date: <input type="text" id="date" name="date"></input>
+    <input type="submit" value="GO" id="dateButton">
+  </div>
+</form>
+<form ref="uploadForm" id="fileupload" action="http://localhost:8080/upload" method="post"
+encType="multipart/form-data">
+<h2 id="fHeader"></h2>
+<div class="uploader">
+  <input type="hidden" name="section" id="subper"><br>
+  <input type="file" id="fup" name="filetoupload"><br>
+  <input type="button" id="addf" name="add" value="Add File">
+  <input type="submit" value="Upload">
+</div>
+</form>
+<script src="./js/function2.js"></script>
+</body>
+</html>
