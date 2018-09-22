@@ -1,0 +1,27 @@
+{
+  "name": "nieto-site",
+  "version": "1.0.0",
+  "description": "Nieto math classes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cugonna/Nieto-Site.git"
+  },
+  "author": "Chima Ugonna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cugonna/Nieto-Site/issues"
+  },
+  "homepage": "https://github.com/cugonna/Nieto-Site#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "mv": "^2.1.1",
+    "path": "^0.12.7"
+  }
+}
