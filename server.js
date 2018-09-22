@@ -10,6 +10,8 @@ var xupload = require('express-fileupload');
 
 var server = http.createServer(app);
 var upath;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 app.use(bp.urlencoded({extended: true}));
 app.use(xupload());
@@ -116,5 +118,8 @@ app.post('/upload/:subject/:period/:date', function(req, res){
   res.end();
 });
 
-server.listen(8080);
-console.log("listening on port 8080");
+//server.listen(8080);
+//console.log("listening on port 8080");
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", port " + server_port );
+});
