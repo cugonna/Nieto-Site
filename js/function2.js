@@ -75,6 +75,12 @@ $(document).ready(function(){
       return false;
     }
   }
+  
+  function removeDoc(arr, index){
+    alert("Removing this file...");
+    arr.splice(index, 1);
+    return arr;
+  }
 });
 
 document.getElementById("dateButton").addEventListener("click", function(event){
