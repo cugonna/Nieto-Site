@@ -16,6 +16,16 @@
 </head>
 <body>
 <h1 style="text-align:center">Mr. Nieto's Course Directory</h1>
+<h3 style="text-align:center" id="portal"></h3>
+<script>
+var u = localStorage.getItem("username");
+var p = localStorage.getItem("password");
+if(u == "anieto" && p == "3wholepotato"){
+  $("#portal").html("Teacher Portal");
+}else{
+  $("#portal").html("Student Portal");
+}
+</script>
 <div>
 <img class="img-center" src="nieto1.png">
 </div>
@@ -36,7 +46,8 @@
     <th class="sub">Geometry</th>
     <tr><td><a class="period" href="schedule.html">7th</a></td></tr>
   </table>
-</div>
 
+</div>
+<div style="text-align:center"><a href="home.html">Logout</a></div>
 </body>
 </html>
