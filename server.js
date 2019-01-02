@@ -110,12 +110,14 @@ app.get('/remove/:sub/:per/:date/:file', function(req, res){
   res.write('<h1>Files for ' + datep + '</h1>');
   var path = "./uploads/"+subp+"/"+perp+"/"+datep;
   fs.readdir(path, function(err, items){
-    console.log(items);
+    console.log(fname);
+    var fspace = fname.replace('_', ' ');
     if(items != undefined){
       res.write('<ul>');
       for(var i=0; i<items.length; i++){
-        if(items[i] == fname){
-          fs.unlink(path+'/'+fname);
+        if(items[i] == fspace){
+          console.log("Removing file: " + fspace);
+          fs.unlink(path+'/'+fspace);
         }else{
           var file = items[i].replace(" ", "_");
           res.write('<li>' + items[i] + ' <form action="" method="get"><input type="submit" class="removeF" value="Remove"></input></form></li><script>var removeDoc = function(arr, index){alert("Removing this file...");arr.splice(index, 1);return arr;}</script>');
@@ -127,7 +129,7 @@ app.get('/remove/:sub/:per/:date/:file', function(req, res){
       });
     }
   });
-  res.write('<form ref="uploadForm" id="fileupload" action="http://localhost:8080/upload/'+subp+'/'+perp+'/'+datep+'" method="post" encType="multipart/form-data"><h2 id="fHeader"></h2> <div class="uploader">    <input type="hidden" name="section" id="subper"><br>    <input type="file" id="fup" name="filetoupload" multiple><br> <input type="submit" value="Upload">  </div></form>');
+  res.write('<form ref="uploadForm" id="fileupload" action="http://10.0.0.24:8080/upload/'+subp+'/'+perp+'/'+datep+'" method="post" encType="multipart/form-data"><h2 id="fHeader"></h2> <div class="uploader">    <input type="hidden" name="section" id="subper"><br>    <input type="file" id="fup" name="filetoupload" multiple><br> <input type="submit" value="Upload">  </div></form>');
 });
 
 app.get('/download/:file', function(req, res){
