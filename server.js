@@ -174,7 +174,7 @@ app.post('/upload/:subject/:period/:date', function(req, res){
   res.end();
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on ${PORT}/`);
 });
 
