@@ -25,14 +25,14 @@ $(document).ready(function(){
     var subp = subj.replace(" ", "-");
     var perp = perd.replace(" ", "-");
     var datep = ddata.replace(/\//g, "-");
-    //var path = 'http://10.0.0.24:8080/'+subp+"/"+perp+"/"+datep;
+    //var path = 'http://192.168.0.187:8080/'+subp+"/"+perp+"/"+datep;
 
     if(user == "anieto" && pass == "3wholepotato"){
-      $("#dataForm").attr('action', 'http://10.0.0.24:8080/anieto/files');
+      $("#dataForm").attr('action', 'http://192.168.0.187:8080/anieto/files');
     }else{
-      $("#dataForm").attr('action', 'http://10.0.0.24:8080/files');
+      $("#dataForm").attr('action', 'http://192.168.0.187:8080/files');
     }
-    //$("#dataForm").attr('action', 'http://10.0.0.24:8080/files');
+    //$("#dataForm").attr('action', 'http://192.168.0.187:8080/files');
     if(ddata.length == 10){
       //$(".dateselect").after("<h2>Files for " + ddata + "</h2>");
       //$("#fHeader").html("Files for " + ddata);
